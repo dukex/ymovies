@@ -1,17 +1,21 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
-import mdx from '@astrojs/mdx';
-import sitemap from '@astrojs/sitemap';
+import { defineConfig } from "astro/config";
+import mdx from "@astrojs/mdx";
+import sitemap from "@astrojs/sitemap";
 
-import cloudflare from '@astrojs/cloudflare';
+import cloudflare from "@astrojs/cloudflare";
 
-// https://astro.build/config
+import tailwind from "@astrojs/tailwind";
+
 export default defineConfig({
-  site: 'https://example.com',
-  integrations: [mdx(), sitemap()],
+  prefetch: {
+    prefetchAll: true,
+  },
+  site: "https://example.com",
+  integrations: [mdx(), sitemap(), tailwind()],
   adapter: cloudflare({
     platformProxy: {
-      enabled: true
-    }
+      enabled: true,
+    },
   }),
 });
