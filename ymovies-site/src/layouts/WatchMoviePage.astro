@@ -22,16 +22,20 @@ const { title, name, vid, description,related, publishedAt, thumbnail } = Astro.
 
   <body class="bg-black text-white">
     <main class="">
-      <article class="max-w-screen-lg m-auto mt-2 mb-5 pb-5">
+      <article class="m-auto mt-2 mb-5 pb-5">
         <iframe 
-               width="1020" 
-                      height="510" src={`https://www.youtube.com/embed/${vid}`} title="" 
-                                                                                frameBorder="0"  
-                                                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowFullScreen>
+               class="h-screen w-full"
+               width="1020"
+               height="510" src={`https://www.youtube.com/embed/${vid}?autoplay=1`} 
+               title={name}
+               frameBorder="0"
+               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  
+              allowFullScreen>
         </iframe>
 
+        <div class="max-w-screen-lg mx-auto">
 
-        <div class="title mb-4 mt-3 px-5">
+        <div class="title mb-4 mt-3 px-5 ">
           <h1 class="text-4xl font-bold">{name}</h1>
         </div>
         <div class="px-5 p-2">
@@ -53,6 +57,7 @@ const { title, name, vid, description,related, publishedAt, thumbnail } = Astro.
 
           </a>
           ))}
+        </div>
         </div>
       </article>
     </main>
