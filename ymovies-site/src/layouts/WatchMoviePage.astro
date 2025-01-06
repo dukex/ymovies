@@ -4,6 +4,8 @@ import Footer from '../components/Footer.astro';
 
 type Props = CollectionEntry<'movie'>['data'];
 
+import { Image } from 'astro:assets';
+
 const { title, name, vid, description,related, publishedAt, thumbnail } = Astro.props;
 ---
 
@@ -41,12 +43,12 @@ const { title, name, vid, description,related, publishedAt, thumbnail } = Astro.
 
         <h2 class="text-2xl font-bold mt-10 px-5">Related</h2> 
 
-        <div class="grid grid-cols-5 gap-4 px-5">
+        <div class="grid lg:grid-cols-5 mg:grid-cols-4  gap-4 px-5">
 
           {related.map(movie => (
-          <a href={movie.id} class="w-full rounded-md overflow-hidden border pb-2">
+          <a href={`/movies/${movie.data.slug}`} class="w-full rounded-md overflow-hidden border pb-2">
 
-            {movie.data.thumbnail && <img width="100%" height={510} src={movie.data.thumbnail} alt={movie.data.name} />}
+            {movie.data.thumbnail && <Image inferSize src={movie.data.thumbnail} alt={movie.data.name} />}
             <h3 class="px-2">{movie.data.title}</h3>
 
           </a>

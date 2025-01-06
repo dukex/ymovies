@@ -19,6 +19,9 @@ export default defineConfig({
       enabled: true,
     },
   }),
+  image: {
+    domains: ["i.ytimg.com"],
+  },
   markdown: {
     rehypePlugins: [
       [
