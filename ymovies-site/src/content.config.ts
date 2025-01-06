@@ -9,6 +9,7 @@ const movie = defineCollection({
     name: z.string(),
     slug: z.string(),
     thumbnail: z.string(),
+    language: z.string(),
     publishedAt: z.coerce.date(),
     related: z.array(reference("movie")),
   }),
