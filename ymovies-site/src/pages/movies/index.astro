@@ -4,14 +4,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 
 const movies = (await getCollection('movie'))
-//.sort(
-//	(a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf(),
-//);
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1477830203682344"
+          crossorigin="anonymous"></script>
+
 	</head>
 	<body>
 		<main>
@@ -20,8 +20,7 @@ const movies = (await getCollection('movie'))
 					{
 						movies.map((movie) => (
 							<li>
-                {JSON.stringify(movie.data)}
-								<a href={`/watch/${movie.id}/`}>
+								<a href={`/movies/${movie.id}/`}>
 									<img width={720} height={360} src={movie.data.heroImage} alt="" />
 									<h4 class="title">{movie.data.name}</h4>
 								</a>
