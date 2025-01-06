@@ -12,7 +12,7 @@ export default defineConfig({
   prefetch: {
     prefetchAll: true,
   },
-  site: "https://example.com",
+  site: "https://ymovies.app",
   integrations: [mdx(), sitemap(), tailwind()],
   adapter: cloudflare({
     platformProxy: {
