@@ -15,6 +15,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     <meta name="msapplication-TileColor" content="#dc2626">
     <meta name="theme-color" content="#0ed3cf">
 
+  <link rel="sitemap" href="/sitemap-index.xml" />
+
     <title>YMovies</title>
   </head>
   <body class="bg-gray-200">
@@ -30,12 +32,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
           <span>Unlimited movies and more,<br /></span>
           <span> for free. </span>
           </p>
-          <p class=" font-semibold text-3xl flex flex-col items-center">Watch anywhere. No card required.</p>
+          <p class=" font-semibold text-3xl flex flex-col items-center">Watch anywhere. No card required.</p>4
           <p class=" text-lg flex flex-col items-center">Ready to watch? Search a good movies and enjoy.</p>
-          <div class="flex flex-row items-center justify-center">
-            <input type="text" placeholder="Email address" class="p-4 focus:outline-none focus:ring-1 focus:ring-blue-300 w-3/4" />
+          <form class="flex flex-row items-center justify-center" url="/movies">
+            <input type="text" placeholder="Search movies" class="p-4 focus:outline-none focus:ring-1 focus:ring-blue-300 w-3/4" />
             <button class="p-4 text-l font-semibold bg-red-600 hover:bg-red-700 text-white">Get Started ></button>
-          </div>
+          </form>
         </div>
       </div>
       <Footer />

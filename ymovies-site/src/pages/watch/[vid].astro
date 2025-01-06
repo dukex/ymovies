@@ -1,0 +1,30 @@
+---
+import { type CollectionEntry, getCollection, getEntries } from 'astro:content';
+import WatchMoviePage from '../../layouts/WatchMoviePage.astro';
+import { render } from 'astro:content';
+
+export async function getStaticPaths() {
+const movies = await getCollection('movie');
+
+return movies.map(movie => ({
+params: { vid: movie.data.vid },
+props: { movie },
+}));
+}
+
+const { movie } = Astro.props;
+const { Content } = await render(movie);
+
+const related = await getEntries(movie.data.related);
+
+---
+
+<WatchMoviePage {...movie.data} related={related}>
+  <div
+      class="prose dark:prose-invert
+             prose-h1:font-bold prose-h1:text-xl
+             prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl
+             prose-headings:underline">
+    <Content />
+  </div>
+</WatchMoviePage>

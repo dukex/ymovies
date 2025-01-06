@@ -6,6 +6,7 @@ import sitemap from "@astrojs/sitemap";
 import cloudflare from "@astrojs/cloudflare";
 
 import tailwind from "@astrojs/tailwind";
+import rehypeExternalLinks from "rehype-external-links";
 
 export default defineConfig({
   prefetch: {
@@ -18,4 +19,14 @@ export default defineConfig({
       enabled: true,
     },
   }),
+  markdown: {
+    rehypePlugins: [
+      [
+        rehypeExternalLinks,
+        {
+          content: { type: "text", value: " 🔗" },
+        },
+      ],
+    ],
+  },
 });
